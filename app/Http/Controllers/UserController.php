@@ -15,10 +15,9 @@ class UserController extends Controller
     $roles = Role::all();
     foreach($users as $user){
       $user->password = str_repeat('*', strlen($user->password));
-
     }
     return view('user', compact('users','roles'));
-  }
+  } 
 
   public function addUser(Request $request){
     $request->validate([
