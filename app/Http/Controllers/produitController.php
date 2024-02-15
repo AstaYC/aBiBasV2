@@ -16,7 +16,7 @@ class produitController extends Controller
     }
 
     // ...
-    
+
     public function addProduit(Request $request)
     {
         $request->validate([

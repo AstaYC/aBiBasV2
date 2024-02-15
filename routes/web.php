@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\categorieController;
 use App\Http\Controllers\produitController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 
 // use App\Http\Controllers\UserController;
 /*
@@ -20,15 +22,19 @@ Route::get('/register' , [AuthController::class, 'register_page']);
 Route::get('/login',[AuthController::class,'login_page']);
 Route::get('/categorie',[categorieController::class, 'liste_categorie']);
 Route::get('/produit',[produitController::class, 'list_produit']);
+Route::get('/user', [UserController::class , 'displayUser']);
 
 
 Route::post('/register/act' , [AuthController::class, 'register']);
 Route::post('/login/act', [AuthController::class, 'login']);
 
+Route::post('/user/add' , [UserController::class, 'addUser']);
+Route::post('/user/update' , [UserController::class , 'updateUser']);
+Route::post('/user/delete' , [UserController::class , 'deleteUser']);
+
 Route::post('/categorie/add',[categorieController::class, 'addCategorie']);
 Route::post('/categorie/update' , [categorieController::class, 'updateCategorie']);
 Route::post('/categorie/delete' , [categorieController::class, 'deleteCategorie']);
-
 
 Route::post('/produit/add' , [produitController::class, 'addProduit']);
 Route::post('/produit/update' , [produitController::class, 'updateProduit']);
