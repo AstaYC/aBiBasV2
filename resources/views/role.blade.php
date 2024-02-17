@@ -87,7 +87,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
-                <form method="POST" action="/categorie/add">
+                <form method="POST" action="/role/add">
                   @csrf
                   <div class="form-group">
                     <label for="CategorieName">Role Name:</label>
@@ -96,9 +96,9 @@
                   
                   <div class="form-group">
                     <label>Le(s) Route(s):</label>
-                    @for($routes as $route)
+                    @foreach($routes as $route)
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="route{{$route['id']}}" name="id" value="{{$route['id']}}">
+                      <input type="checkbox" class="form-check-input" id="route{{$route['id']}}" name="id[]" value="{{$route['id']}}">
                       <label class="form-check-label" for="route{{$route['id']}}">{{$route['nom']}}</label>
                     </div>
                     @endforeach
@@ -147,7 +147,7 @@
                     <div class="modal-body">
                       <form method="POST" action="/role/update">
                         @csrf
-                        <input type="hidden" name="id" value="{{$role->id}}">
+                        <input type="hidden" name="role_id" value="{{$role->id}}">
 
                         <div class="form-group">
                           <label for="updateMedicineName">Role Name:</label>
@@ -155,9 +155,9 @@
                         </div>
                         
                         <label>Le(s) Route(s):</label>
-                        @for($routes as $route)
+                        @foreach($routes as $route)
                         <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="route{{$route['id']}}" name="id" value="{{$route['id']}}">
+                          <input type="checkbox" class="form-check-input" id="route{{$route['id']}}" name="id[]" value="{{$route['id']}} @if()@endif">
                           <label class="form-check-label" for="route{{$route['id']}}">{{$route['nom']}}</label>
                         </div>
                         @endforeach
