@@ -75,7 +75,6 @@ class RoleController extends Controller
             $permission->save();
         }
     }
-
          return redirect('/role')->with('status','La Modification est bien faite');
       }
 
@@ -88,5 +87,4 @@ class RoleController extends Controller
         $role->delete();
         return redirect('/role')->with('status','La Supprission est bien faite');
     }
-
 }

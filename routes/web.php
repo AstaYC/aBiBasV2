@@ -6,8 +6,8 @@ use App\Http\Controllers\produitController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Models\Role;
-use App\Models\User;
+use App\Http\Controllers\ForgotPasswordController;
+
 
 // use App\Http\Controllers\UserController;
 /*
@@ -46,3 +46,8 @@ Route::post('/produit/delete' , [produitController::class, 'deleteProduit']);
 Route::post('/role/add' , [RoleController::class , 'addRole']);
 Route::post('/role/update' , [RoleController::class , 'updateRole']);
 Route::post('/role/delete' , [RoleController::class , 'deleteRole']);
+
+// routes/web.php
+
+Route::get('/forgotPass', [ForgotPasswordController::class, 'passForm']);
+Route::post('/forgotPass', [ForgotPasswordController::class, 'sendEmail']);

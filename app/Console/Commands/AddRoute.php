@@ -34,8 +34,5 @@ class AddRoute extends Command
         $uri = $route->uri();
         dd($uri);
         }
-
-
-
     }
 }

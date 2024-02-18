@@ -157,7 +157,7 @@
                         <label>Le(s) Route(s):</label>
                         @foreach($routes as $route)
                         <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="route{{$route['id']}}" name="id[]" value="{{$route['id']}} @if()@endif">
+                          <input type="checkbox" class="form-check-input" id="route{{$route['id']}}" name="id[]" value="{{$route['id']}}">
                           <label class="form-check-label" for="route{{$route['id']}}">{{$route['nom']}}</label>
                         </div>
                         @endforeach

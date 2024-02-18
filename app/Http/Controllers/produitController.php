@@ -34,10 +34,8 @@ class produitController extends Controller
             $input['images'] =  $imageName;
         }
     
-        // Créez une instance du modèle Produit
         $produit = new Produit;
     
-        // Remplissez les propriétés du modèle avec les données du formulaire
         $produit->nom = $input['nom'];
         $produit->description = $input['description'];
         $produit->prix = $input['prix'];
@@ -45,7 +43,6 @@ class produitController extends Controller
         $produit->tags = $input['tags'];
         $produit->categorie_id = $input['categorie_id'];
     
-        // Enregistrez le modèle dans la base de données
         $produit->save();
     
         return redirect('/produit')->with('status', 'Ajoute Bien Fait !!');
