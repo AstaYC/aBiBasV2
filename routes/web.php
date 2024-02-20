@@ -51,3 +51,6 @@ Route::post('/role/delete' , [RoleController::class , 'deleteRole']);
 
 Route::get('/forgotPass', [ForgotPasswordController::class, 'passForm']);
 Route::post('/forgotPass', [ForgotPasswordController::class, 'sendEmail']);
+Route::get('/forgotPassTest', [ForgotPasswordController::class, 'get']);
+Route::get('reset/{token}', [ForgotPasswordController::class, 'reset']);
+Route::post('reset/{token}', [ForgotPasswordController::class, 'PostReset']);

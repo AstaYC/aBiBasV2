@@ -42,7 +42,7 @@
   
               <div class="row mb-4">
                 <div class="col">
-                    <a href="#!">Forgot password?</a>
+                    <a href="/forgotPass">Forgot password?</a>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block mb-4" value="register">Sign in</button>
