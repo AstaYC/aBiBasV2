@@ -8,7 +8,7 @@ use App\Models\Categorie;
 class categorieController extends Controller
 {
     public function liste_categorie (){
-        $categories = Categorie::all();
+        $categories = Categorie::paginate(10);
         return view('categorie_list' , compact('categories'));
     }
 

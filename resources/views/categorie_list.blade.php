@@ -129,6 +129,7 @@
           @endforeach
         </tbody>
       </table>
+        {{$categories->links('pagination::bootstrap-5')}}
           {{-- update model --}}
          @foreach($categories as $categorie)
           <div class="modal" id="updateCategoryModal{{$categorie->id}}">

@@ -30,7 +30,7 @@ class RoleController extends Controller
 
           $role->nom = $request->nom;
           $role->save();
-          $lasteId = Role::max('id');
+          $lasteId = $role->id;
           
           if(count($ids) > 0){
               

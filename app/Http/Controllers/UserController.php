@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
   public function displayUser(){
-    $users = DB::select('SELECT * ,users.id AS user_id , users.nom AS user_nom  , roles.nom AS role_nom FROM `users` INNER JOIN roles ON users.role_id = roles.id;');
+    $users = DB::table('users')->join('roles','users.role_id','=','roles.id')
+             ->select('users.*','users.id as user_id' , 'users.nom as user_nom', 'roles.nom as role_nom')
+             ->paginate(10);
     $roles = Role::all();
     foreach($users as $user){
       $user->password = str_repeat('*', strlen($user->password));
@@ -25,7 +27,7 @@ class UserController extends Controller
         'email' => 'required|email|max:100',
         'password' => 'required|string|min:6',
         'role_id' => 'required'
-      ]);
+      ]); 
       $passHash = bcrypt($request->password);
       $imagePath = 'public\assets';
       $user = new User();
